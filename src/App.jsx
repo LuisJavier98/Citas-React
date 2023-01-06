@@ -10,16 +10,17 @@ function App() {
   const [editActive, seteditActive] = useState(false)
   const deletePaciente = obj => {
     setdata(data.filter(d => d !== obj))
-    console.log(obj)
   }
-
   useEffect(() => {
+
     const getLocal = () => {
       const pacientesLS = JSON.parse(localStorage.getItem('data')) ?? [];
       setdata(pacientesLS)
     }
     getLocal()
   }, [])
+
+
 
   useEffect(() => {
     localStorage.setItem('data', JSON.stringify(data))
