@@ -29,11 +29,20 @@ const Formulario = ({ data, setdata, editActive, seteditActive, paciente, setpac
       }
       setdata([...data, objetoPacientes])
     } else {
-      paciente.namePet = e.target[0].value
-      paciente.nameProperty = e.target[1].value
-      paciente.email = e.target[2].value
-      paciente.alta = e.target[3].value
-      paciente.message = e.target[4].value
+      const arregloModificado = data.map(arreglo => {
+        if (arreglo == paciente) {
+          return {
+            namePet: e.target[0].value,
+            nameProperty: e.target[1].value,
+            email: e.target[2].value,
+            alta: e.target[3].value,
+            message: e.target[4].value
+          }
+        } else {
+          return arreglo
+        }
+      })
+      setdata(arregloModificado)
       seteditActive(false)
       setpaciente({})
     }
