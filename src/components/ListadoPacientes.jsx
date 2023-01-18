@@ -1,6 +1,6 @@
 import Paciente from './Paciente'
 
-const ListadoPacientes = ({ data, seteditActive, setpaciente, deletePaciente }) => {
+const ListadoPacientes = ({ editActive, data, seteditActive, setpaciente, deletePaciente }) => {
 
 	return (
 		<div className='md:w-1/2 lg:w-3/5 md:h-screen overflow-auto'>
@@ -11,7 +11,7 @@ const ListadoPacientes = ({ data, seteditActive, setpaciente, deletePaciente }) 
 			</p>
 			{
 				data.length !== 0 ?
-					data.map((d) => <Paciente key={d.id} d={d} seteditActive={seteditActive} setpaciente={setpaciente} deletePaciente={deletePaciente} />)
+					data.map((d) => <Paciente key={d.id} d={d} editActive={editActive} seteditActive={seteditActive} setpaciente={setpaciente} deletePaciente={deletePaciente} />)
 					:
 					<p className='p-3 bg-red-700 text-center font-bold text-lg'>No existen pacientes registrados</p>
 			}

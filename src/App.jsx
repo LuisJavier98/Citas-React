@@ -31,10 +31,9 @@ function App() {
       <Header />
       <div className='mt-12 md:flex'>
         <Formulario data={data} setdata={setdata} editActive={editActive} seteditActive={seteditActive} paciente={paciente} setpaciente={setpaciente} />
-        <ListadoPacientes data={data} seteditActive={seteditActive} setpaciente={setpaciente} deletePaciente={deletePaciente} />
+        <ListadoPacientes editActive={editActive} data={data} seteditActive={seteditActive} setpaciente={setpaciente} deletePaciente={deletePaciente} />
       </div>
     </div>
   )
 }
-
 export default App
